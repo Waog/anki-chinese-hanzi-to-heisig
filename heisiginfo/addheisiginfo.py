@@ -2,11 +2,6 @@
 # Copyright: Ian Worthington <worthy.vii@gmail.com> (author of the original 'heisiginfo' plugin)
 # Copyright: Oliver Stadie <oliver.stadie@gmail.com> (author of the 'anki-chinese-hanzi-to-heisig' plugin)
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
-#
-#
-# Adding of Heisig Keywords - to the "Kanji Keywords" field
-# Adding of Heisig Numbers - to the "Heisig Number" field
-# Adding of Maximum Heisig Numbers - to the "Heisig Number" field
 
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -30,9 +25,9 @@ joinseparator = ', '
 
 #Fields used
 #in					
-expField = 'Expression'
+expField = 'Hanzi'
 #out
-kanjiDstField = 'Kanji Keywords'
+kanjiDstField = 'Heisig English Keywords'
 heisigNumDstField = 'Heisig Number'
 
 #Default Heisig version to use
