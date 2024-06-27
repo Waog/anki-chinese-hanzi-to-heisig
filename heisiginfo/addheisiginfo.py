@@ -3,8 +3,9 @@
 # Copyright: Oliver Stadie <oliver.stadie@gmail.com> (author of the 'anki-chinese-hanzi-to-heisig' plugin)
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 from anki.hooks import addHook
 import os, re
 from anki.utils import stripHTML
@@ -41,7 +42,7 @@ def readRTK():
     for line in content:
         fieldhash = dict(zip(('kanji', 'heisigold', 'heisig2010', 'keyword'),
                             line.split('\t')))
-        kanjiIndex[fieldhash['kanji'].decode('utf8')] = fieldhash
+        kanjiIndex[fieldhash['kanji']] = fieldhash
     
     
 def getHeisigVersion():
@@ -193,7 +194,7 @@ def addMostDifficultHeisigNumber(nids):
 
 def lookupKanjiInfo(wordsTxt, key):
     #first get only the kanji
-    words = re.findall(ur'[\u4e00-\u9fbf]',wordsTxt)
+    words = re.findall(r'[\u4e00-\u9fff]', wordsTxt)
     results = []
     for word in words:
         if (word in kanjiIndex):
