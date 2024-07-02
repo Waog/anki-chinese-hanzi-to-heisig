@@ -346,9 +346,9 @@ def setupMenu(browser):
     heisigMenu.addAction(b)
     heisigMenu.addAction(c)
 
-    browser.connect(a, SIGNAL("triggered()"), lambda e=browser: onKanjiKeywords(e))
-    browser.connect(b, SIGNAL("triggered()"), lambda e=browser: onHeisigNumbers(e))
-    browser.connect(c, SIGNAL("triggered()"), lambda e=browser: onHardestHeisigNumber(e))
+    a.triggered.connect(lambda e=browser: onKanjiKeywords(e))
+    b.triggered.connect(lambda e=browser: onHeisigNumbers(e))
+    c.triggered.connect(lambda e=browser: onHardestHeisigNumber(e))
                     
 def onKanjiKeywords(browser):
     addKanjiKeywords_bulk(browser.selectedNotes())
